@@ -6,6 +6,7 @@ import useMoveToRevalidate from "@/hooks/useMoveToRevalidate.js";
 const Form = ({ content, questions, handleImagesChange, createDocument }) => {
   // console.log('data', questions)
   const [defaultConditionsAgreed, setDefaultConditionsAgreed] = useState(false)
+  const moveToInvalidatedField = useMoveToRevalidate()
 
   const [options, setOptions] = useState(
     questions?.reduce(
@@ -17,8 +18,8 @@ const Form = ({ content, questions, handleImagesChange, createDocument }) => {
       {}
     )
   );
-  const validateConditions = () => {
-    if(defaultConditionsAgreed === false) useMoveToRevalidate('defaultConditionsQuestion')
+  const ValidateConditions = () => {
+    if(defaultConditionsAgreed === false) moveToInvalidatedField('defaultConditionsQuestion')
     if (defaultConditionsAgreed === true) return true
   }
 
@@ -114,7 +115,7 @@ const Form = ({ content, questions, handleImagesChange, createDocument }) => {
         <button
           type="submit"
           className="py-2 px-10 bg-violet text-white shadow font-medium rounded mt-10 mb-20"
-          onClick={() => createDocument(validateConditions)}
+          onClick={() => createDocument(ValidateConditions)}
           // disabled={!defaultConditionsAgreed? true: false}
         >
           Create API Terms of Services
