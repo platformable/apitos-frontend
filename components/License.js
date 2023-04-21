@@ -3,12 +3,14 @@ import useDownloadCombinedImages from "@/hooks/useDownloadCombinedImages";
 const License = ({ pictogramsSelected, licenseSectionThankyouText, fileUrl }) => {
   const downloadImages = useDownloadCombinedImages()
   return (
-    <section className="bg-extralight-violet pt-14 pb-28">
+   <>
+    {fileUrl && (
+      <section className="bg-extralight-violet pt-14 pb-28">
       <div className="container mx-auto">
         <h1 className="text-center mb-14 font-bold">
           {licenseSectionThankyouText}
         </h1>
-        <div className="grid md:grid-cols-2 gap-20">
+        <div className="grid xl:grid-cols-2 gap-20">
           <div className="flex flex-col justify-between gap-7 ">
             <h2 className="font-bold">Selected License</h2>
 
@@ -33,14 +35,14 @@ const License = ({ pictogramsSelected, licenseSectionThankyouText, fileUrl }) =>
               Download Pictograms
             </button>
           </div>
-          <div className="flex flex-col justify-between gap-7 ">
+            <div className="flex flex-col justify-between gap-7 ">
             <h2 className="font-bold">Your license in pdf</h2>
             <div className=" bg-[#C5BCFF] rounded-md py-7 flex justify-center items-center">
               <img src="/pdf_icon.svg" alt="download pdf icon" />
             </div>
             <a href={fileUrl} download="test.pdf">
               <button
-              disabled={fileUrl}
+              disabled={!fileUrl}
                 className="text-white font-medium rounded-md py-3 bg-violet w-full"
               >
                 Download the pdf
@@ -50,6 +52,8 @@ const License = ({ pictogramsSelected, licenseSectionThankyouText, fileUrl }) =>
         </div>
       </div>
     </section>
+    )}
+   </>
   );
 };
 

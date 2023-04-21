@@ -64,11 +64,7 @@ export default function Home({ content, questions }) {
 
   return (
     <main className="">
-      {fileUrl && (
-        <a href={fileUrl} download="test.pdf">
-          Download
-        </a>
-      )}
+      
       <Header />
       <Hero
         heroTitle={content.herotitle}
