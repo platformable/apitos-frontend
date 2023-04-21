@@ -1,6 +1,7 @@
 import useDownloadCombinedImages from "@/hooks/useDownloadCombinedImages";
 
 const License = ({ pictogramsSelected, licenseSectionThankyouText, fileUrl }) => {
+  const downloadImages = useDownloadCombinedImages()
   return (
     <section className="bg-extralight-violet pt-14 pb-28">
       <div className="container mx-auto">
@@ -27,7 +28,7 @@ const License = ({ pictogramsSelected, licenseSectionThankyouText, fileUrl }) =>
 
             <button
               className="text-white font-medium rounded-md py-3 bg-violet"
-              onClick={() => useDownloadCombinedImages("image-container")}
+              onClick={() => downloadImages("image-container")}
             >
               Download Pictograms
             </button>
