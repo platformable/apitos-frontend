@@ -43,7 +43,7 @@ const Form = ({ content, questions, handleImagesChange, createDocument }) => {
   // console.log('options',options);
 
   return (
-    <section className="container mx-auto">
+    <section className="px-5 px-5 md:px-7 lg:px-20">
       <div className="flex items-center justify-center gap-3 py-24">
         <img src="/API_symbol.svg" alt="" />
         <h1 className="font-bold">{content.factWizardTitle}</h1>
@@ -58,7 +58,7 @@ const Form = ({ content, questions, handleImagesChange, createDocument }) => {
               numberOfSteps={questions.length}
               currentStep={0}
             />
-            <div id='defaultConditionsQuestion' className="flex flex-col md:flex-row gap-10 bg-light-violet p-5">
+            <div id='defaultConditionsQuestion' className="flex flex-col lg:flex-row gap-10 bg-light-violet p-5">
               <div className="grid gap-7 bg-white rounded p-5">
                 <div className="flex gap-5">
                   <img src="" alt="" />

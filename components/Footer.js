@@ -1,7 +1,7 @@
 const Footer = ({footerText}) => {
   return (
-    <section role="footer" className="bg-black py-10 text-white">
-      <div className="grid md:grid-cols-3 container mx-auto items-start">
+    <section role="footer" className="bg-black py-10 text-white px-5 md:px-7 lg:px-20">
+      <div className="grid md:grid-cols-3 items-start">
         <div className="flex gap-5 items-center">
           <img src="/API_symbol-white.svg" alt="Fact icon" width={40}/>
           <h2 className="font-bold">APIToS</h2>

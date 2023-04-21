@@ -5,8 +5,8 @@ const License = ({ pictogramsSelected, licenseSectionThankyouText, fileUrl }) =>
   return (
    <>
     {fileUrl && (
-      <section className="bg-extralight-violet pt-14 pb-28">
-      <div className="container mx-auto">
+      <section className="bg-extralight-violet pt-14 pb-28 px-5 md:px-7 lg:px-20">
+      <div className="">
         <h1 className="text-center mb-14 font-bold">
           {licenseSectionThankyouText}
         </h1>
@@ -15,7 +15,7 @@ const License = ({ pictogramsSelected, licenseSectionThankyouText, fileUrl }) =>
             <h2 className="font-bold">Selected License</h2>
 
             <div
-              className="flex items-center justify-between gap-5 border-4 border-light-violet rounded-md py-10 px-5"
+              className="flex flex-col md:grid md:grid-cols-2 lg:flex lg:flex-row items-center justify-between gap-5 border-4 border-light-violet rounded-md py-10 px-5"
               id="image-container"
             >
               {Object.values(pictogramsSelected)?.map((picto, index) => (

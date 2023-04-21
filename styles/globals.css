@@ -57,3 +57,29 @@ input[type="radio"],input[type="checkbox"] {
   min-height: 26px;
 }
 
+@media only screen and (max-width: 600px) {
+  p,a {
+    font-size: 12px;
+  }
+  button {
+    font-size: medium;
+  }
+  h1 {
+    font-size: 37px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  h5 {
+    font-size: 18px;
+  }
+  img .option-icon {
+    width: 20px;
+    height: 20px;
+  }
+  input[type="radio"],input[type="checkbox"] {
+    min-width: 16px;
+    min-height: 16px;
+  }
+}
+

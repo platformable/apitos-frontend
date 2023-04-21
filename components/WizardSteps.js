@@ -1,9 +1,9 @@
 const WizardSteps = ({ wizardStepsTitle }) => {
   return (
-    <section className="bg-extralight-violet py-20">
-      <div className="container mx-auto">
+    <section className="bg-extralight-violet py-20 px-5 md:px-7 lg:px-20 md:container md:mx-auto">
+      <div className="">
         <h3 className="font-bold mb-10">{wizardStepsTitle}</h3>
-        <article className="grid md:grid-cols-3 gap-20">
+        <article className="grid lg:grid-cols-3 gap-20">
           <div className="flex flex-col items-start gap-10">
             <h2 className="font-bold text-[#56B2A3]">Consent to the 2 standard conditions</h2>
             <h5 className="tracking-tight font-medium">
