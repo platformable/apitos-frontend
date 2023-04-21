@@ -6,6 +6,7 @@ import useMoveToRevalidate from "@/hooks/useMoveToRevalidate.js";
 const Form = ({ content, questions, handleImagesChange, createDocument }) => {
   // console.log('data', questions)
   const [defaultConditionsAgreed, setDefaultConditionsAgreed] = useState(false)
+  const moveToInvalidatedField = useMoveToRevalidate()
 
   const [options, setOptions] = useState(
     questions?.reduce(
@@ -18,7 +19,7 @@ const Form = ({ content, questions, handleImagesChange, createDocument }) => {
     )
   );
   const ValidateConditions = () => {
-    if(defaultConditionsAgreed === false) useMoveToRevalidate('defaultConditionsQuestion')
+    if(defaultConditionsAgreed === false) moveToInvalidatedField('defaultConditionsQuestion')
     if (defaultConditionsAgreed === true) return true
   }
 
