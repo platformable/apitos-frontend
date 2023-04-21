@@ -1,27 +1,59 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  /* letter-spacing: -0.025em; */
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+h1 {
+  font-size: 54px;
+}
+h2 {
+  font-size: 42px;;
+}
+h3 {
+  font-size: 38px;
+}
+h4 {
+  font-size: 35px;
+}
+h5 {
+  font-size: 30px;
+}
+p, a {
+  font-size: 24px;
+}
+button {
+  font-size: 30px;
+}
+.bg-violet {
+  background-color:  #7648FE;
+ 
+} 
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.bg-light-violet {
+  background-color: #C7B4FF;
+} 
+.bg-extralight-violet {
+  background-color: #F9F7FF;
+} 
+
+.border-light-violet {
+  border-color: #C7B4FF;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+input[type="radio"],input[type="checkbox"] {
+  min-width: 26px;
+  min-height: 26px;
 }
+
