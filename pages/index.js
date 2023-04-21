@@ -73,7 +73,7 @@ export default function Home({ content, questions }) {
       <Hero
         heroTitle={content.herotitle}
         heroDescription={content.heroDescription}
-        heroImg={content.heroImg}
+        heroImg={content.heroImage}
         heroImgText={content.heroImgText}
       />
       <WizardSteps
