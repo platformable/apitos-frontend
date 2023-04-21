@@ -17,7 +17,7 @@ const Form = ({ content, questions, handleImagesChange, createDocument }) => {
       {}
     )
   );
-  const validateConditions = () => {
+  const ValidateConditions = () => {
     if(defaultConditionsAgreed === false) useMoveToRevalidate('defaultConditionsQuestion')
     if (defaultConditionsAgreed === true) return true
   }
@@ -114,7 +114,7 @@ const Form = ({ content, questions, handleImagesChange, createDocument }) => {
         <button
           type="submit"
           className="py-2 px-10 bg-violet text-white shadow font-medium rounded mt-10 mb-20"
-          onClick={() => createDocument(validateConditions)}
+          onClick={() => createDocument(ValidateConditions)}
           // disabled={!defaultConditionsAgreed? true: false}
         >
           Create API Terms of Services
