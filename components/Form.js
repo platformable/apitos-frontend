@@ -43,7 +43,7 @@ const Form = ({ content, questions, handleImagesChange, createDocument }) => {
   // console.log('options',options);
 
   return (
-    <section className="px-5 px-5 md:px-7 lg:px-20">
+    <section className="px-5 md:px-7 lg:px-24">
       <div className="flex items-center justify-center gap-3 py-24">
         <img src="/API_symbol.svg" alt="" />
         <h1 className="font-bold">{content.factWizardTitle}</h1>
@@ -70,7 +70,7 @@ const Form = ({ content, questions, handleImagesChange, createDocument }) => {
                   {content.defaultConditionUsePolicyDescription}
                 </p>
               </div>
-              <div className="grid gap-7 bg-white p-5">
+              <div className="grid gap-7 bg-white p-5 rounded">
                 <div className="flex gap-5">
                   <img src="" alt="" />
                   <h4 className="font-bold ">
@@ -114,7 +114,7 @@ const Form = ({ content, questions, handleImagesChange, createDocument }) => {
 
         <button
           type="submit"
-          className="py-2 px-10 bg-violet text-white shadow font-medium rounded mt-10 mb-20"
+          className="py-2 px-10 bg-violet text-white shadow-md font-medium rounded mt-10 mb-20"
           onClick={() => createDocument(ValidateConditions)}
           // disabled={!defaultConditionsAgreed? true: false}
         >

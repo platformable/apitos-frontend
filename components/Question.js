@@ -9,7 +9,7 @@ const Question = ({
     <>
       <article className="border-8 rounded-md border-light-violet pb-10 ">
         <div>
-          <h4 className=" font-semibold text-white bg-violet px-2 lg:px-7 py-10">
+          <h4 className=" font-semibold text-white bg-violet px-2 lg:px-7 py-5">
             {questionTitle}
           </h4>
         </div>

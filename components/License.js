@@ -5,7 +5,7 @@ const License = ({ pictogramsSelected, licenseSectionThankyouText, fileUrl }) =>
   return (
    <>
     {fileUrl && (
-      <section className="bg-extralight-violet pt-14 pb-28 px-5 md:px-7 lg:px-20">
+      <section className="bg-extralight-violet pt-14 pb-28 px-5 md:px-7 lg:px-24">
       <div className="">
         <h1 className="text-center mb-14 font-bold">
           {licenseSectionThankyouText}

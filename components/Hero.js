@@ -3,7 +3,7 @@ const Hero = ({ heroTitle, heroDescription, heroImg, heroImgText }) => {
  
   return (
     <section className=" bg-violet flex gap-10 items-center justify-center py-20">
-      <div className="px-5 md:px-7 lg:px-20 flex flex-col md:grid md:grid-flow-col gap-20  text-justify">
+      <div className="px-5 md:px-7 lg:px-24 flex flex-col md:grid md:grid-flow-col gap-20  text-justify">
         <article className="flex flex-col justify-center gap-10">
           <h3 className="text-white font-bold">
             {heroTitle}

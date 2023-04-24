@@ -73,7 +73,7 @@ export default function Home({ content, questions }) {
         heroImgText={content.heroImgText}
       />
       <WizardSteps
-        wizardStepsTitle={content.wizardStepsTitle}
+        content={content}
         step1={{
           title: content.wizardSteps1Title,
           description: content.wizardSteps1Description,
