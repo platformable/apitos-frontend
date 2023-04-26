@@ -5,14 +5,28 @@ const Question = ({
   questionName,
   formState,
 }) => {
+  const rightsLevelColor = (level) => {
+    const colors = {
+      L1: 'green',
+      L2: 'orange',
+      L3: 'red'
+    }
+    return colors[level]
+  }
+  const rightsLevelLabel = (level) => {
+    const labels = {
+      L1: 'High rights to the API User',
+      L2: 'Moderate rights to the API User',
+      L3: 'Low rights to the API User'
+    }
+    return labels[level]
+  }
   return (
     <>
       <article className="border-8 rounded-md border-light-violet pb-10 ">
-        <div>
-          <h4 className=" font-semibold text-white bg-violet px-2 lg:px-7 py-5">
+          <h4 className="rounded-t font-semibold text-white bg-violet px-2 lg:px-7 py-5">
             {questionTitle}
           </h4>
-        </div>
         <h4 className="px-2 lg:px-7 my-7 font-bold italic">I agree with:</h4>
         <ul className="px-2 lg:px-7 grid gap-10">
           {Options?.map((opt, index) => (
@@ -35,6 +49,7 @@ const Question = ({
                       width={47}
                     />
                     <h4 className="font-bold">{opt?.questionText}</h4>
+                    <span className={`px-3 rounded-sm font-bold bg-${rightsLevelColor(opt?.rightsLevels)}`}>{rightsLevelLabel(opt.rightsLevels)}</span>
                   </div>
                   <p className="">{opt?.questionDescription}</p>
                 </label>

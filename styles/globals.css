@@ -67,6 +67,11 @@ input[type="radio"],input[type="checkbox"] {
   min-height: 26px;
 }
 
+.steps-rows {
+  grid-template-rows: 1fr 2fr;
+  gap: 1rem;
+}
+
 @media only screen and (max-width: 600px) {
   p,a {
     font-size: 12px;
