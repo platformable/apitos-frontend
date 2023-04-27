@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Question from "./Question.js";
 import StepsCounter from "./StepsCounter";
 import useMoveToRevalidate from "@/hooks/useMoveToRevalidate.js";
@@ -7,6 +7,8 @@ import { Element, scroller } from "react-scroll";
 
 const Form = ({ content, questions, handleImagesChange, createDocument }) => {
   // console.log('data', questions)
+  const fixedRef = useRef()
+  
   const [defaultConditionsAgreed, setDefaultConditionsAgreed] = useState(false);
   const moveToInvalidatedField = useMoveToRevalidate();
 
@@ -80,6 +82,7 @@ const Form = ({ content, questions, handleImagesChange, createDocument }) => {
             <article className="">
               <StepsCounter numberOfSteps={questions.length} currentStep={0} />
               <div
+              ref={fixedRef}
                 id="question-0"
                 className="flex flex-col lg:flex-row rounded-t gap-5 bg-light-violet p-5"
               >

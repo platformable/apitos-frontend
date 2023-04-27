@@ -4,10 +4,12 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import License from "@/components/License";
 import WizardSteps from "@/components/WizardSteps";
-import { useState } from "react";
-
+import { useState, useRef } from "react";
+import useFixedContainer from "@/hooks/useFixedContainer";
 export default function Home({ content, questions }) {
   console.log(content, questions);
+  const ref = useRef(null);
+
   const [fileUrl, setFileUrl] = useState(null);
   const [pictogramsSelected, setPictogramsSelected] = useState(
     questions?.reduce(
@@ -26,6 +28,9 @@ export default function Home({ content, questions }) {
       {}
     )
   );
+  const Sticky = useFixedContainer(ref);
+
+  
   // console.log("pictos", pictogramsSelected);
 
   const handleImagesChange = (image, questionName) => {
@@ -72,7 +77,13 @@ export default function Home({ content, questions }) {
         heroImg={content.heroImage}
         heroImgText={content.heroImgText}
       />
-      <WizardSteps
+        <div
+        ref={ref}
+        className="absolute bottom-7 mx-5 md:mx-7 lg:mx-24 bg-black text-white p-3 inline-block"
+      >
+        Stickiy button
+      </div>
+       <WizardSteps
         content={content}
         step1={{
           title: content.wizardSteps1Title,
@@ -87,6 +98,9 @@ export default function Home({ content, questions }) {
           description: content.wizardSteps3Description,
         }}
       />
+      {/* <div className="w-full h-100  z-10 absolute top-0 left-0"> */}
+      
+      {/* </div> */}
       <Form
         content={content}
         questions={questions}
