@@ -8,7 +8,7 @@ import { useState, useRef } from "react";
 import useFixedContainer from "@/hooks/useFixedContainer";
 export default function Home({ content, questions }) {
   console.log(content, questions);
-  const ref = useRef(null);
+  // const ref = useRef(null);
 
   const [fileUrl, setFileUrl] = useState(null);
   const [pictogramsSelected, setPictogramsSelected] = useState(
@@ -28,7 +28,7 @@ export default function Home({ content, questions }) {
       {}
     )
   );
-  const Sticky = useFixedContainer(ref);
+  // const Sticky = useFixedContainer(ref);
 
   
   // console.log("pictos", pictogramsSelected);
@@ -76,28 +76,15 @@ export default function Home({ content, questions }) {
         heroDescription={content.heroDescription}
         heroImg={content.heroImage}
         heroImgText={content.heroImgText}
+        content={content}
       />
-        <div
+        {/* <div
         ref={ref}
         className="absolute bottom-7 mx-5 md:mx-7 lg:mx-24 bg-black text-white p-3 inline-block"
       >
         Stickiy button
-      </div>
-       <WizardSteps
-        content={content}
-        step1={{
-          title: content.wizardSteps1Title,
-          description: content.wizardSteps1Description,
-        }}
-        step2={{
-          title: content.wizardSteps2Title,
-          description: content.wizardSteps2Description,
-        }}
-        step3={{
-          title: content.wizardSteps3Title,
-          description: content.wizardSteps3Description,
-        }}
-      />
+      </div> */}
+       
       {/* <div className="w-full h-100  z-10 absolute top-0 left-0"> */}
       
       {/* </div> */}
