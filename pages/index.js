@@ -4,11 +4,11 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import License from "@/components/License";
 import WizardSteps from "@/components/WizardSteps";
-import { useState, useRef } from "react";
-import useFixedContainer from "@/hooks/useFixedContainer";
+import { useState } from "react";
+
 export default function Home({ content, questions }) {
   console.log(content, questions);
-  // const ref = useRef(null);
+
 
   const [fileUrl, setFileUrl] = useState(null);
   const [pictogramsSelected, setPictogramsSelected] = useState(
@@ -28,7 +28,7 @@ export default function Home({ content, questions }) {
       {}
     )
   );
-  // const Sticky = useFixedContainer(ref);
+
 
   
   // console.log("pictos", pictogramsSelected);
@@ -78,16 +78,7 @@ export default function Home({ content, questions }) {
         heroImgText={content.heroImgText}
         content={content}
       />
-        {/* <div
-        ref={ref}
-        className="absolute bottom-7 mx-5 md:mx-7 lg:mx-24 bg-black text-white p-3 inline-block"
-      >
-        Stickiy button
-      </div> */}
-       
-      {/* <div className="w-full h-100  z-10 absolute top-0 left-0"> */}
-      
-      {/* </div> */}
+        
       <Form
         content={content}
         questions={questions}

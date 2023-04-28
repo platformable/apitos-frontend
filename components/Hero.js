@@ -1,13 +1,25 @@
 import { useRef, useState } from "react";
 import useFixedContainer from "@/hooks/useFixedContainer";
 import WizardSteps from "./WizardSteps";
+import {  scroller } from "react-scroll";
+
 
 const Hero = ({ heroTitle, heroDescription, heroImg, heroImgText, content }) => {
-  // const ref = useRef(null);
-  // const Sticky = useFixedContainer(ref);
+  const ref = useRef(null);
+  const sticky = useFixedContainer(ref);
+
+  const handleFixedWidget = () => {
+    // hacemos scroll al form
+    
+    scroller.scrollTo(`form-section`, {
+      duration: 1000,
+      smooth: "easeInOutQuart",
+    });
+  };
+
   return (
     <div className=" flex flex-col items-start">
-      <section className=" bg-violet flex gap-10 items-center justify-center py-20">
+      <section className=" bg-violet flex gap-10 items-center justify-center pt-20 pb-32">
         <div className="px-5 md:px-7 lg:px-24 flex flex-col md:grid md:grid-flow-col gap-20  text-justify">
           <article className="flex flex-col items-start justify-center gap-5">
             <h3 className="text-white font-bold">{heroTitle}</h3>
@@ -28,16 +40,22 @@ const Hero = ({ heroTitle, heroDescription, heroImg, heroImgText, content }) => 
           </div>
         </div>
       </section>
-      <div className="px-5 md:px-7 lg:px-24 sticky top-0  h-0">
-      <div className="">
-      <div
-        // ref={ref}
-        className="bg-black text-white p-3 inline-block"
+      
+      <button
+        ref={ref}
+        onClick={handleFixedWidget}
+        className="mx-5 md:mx-7 lg:mx-24 -mt-24 mb-5 border-2 rounded shadow-xl flex divide-x-2 divide-white border-white bg-black z-10 text-white  inline-block"
       >
-        Stickiy button
-      </div>
-      </div>
-      </div>
+        <div className="bg-black flex items-center gap-2 p-2">
+        <span className="text-[#C7B4FF] font-bold">Start</span>
+        <img src="/API_symbol-white.svg" alt="cog icon" width={20}/>
+        <span className="text-white  font-bold">FACT WIZARD</span>
+
+        </div>
+        <div className="font-bold text-black bg-light-violet px-3 py-2">
+            <span>NOW!</span>
+        </div>
+      </button>
       <WizardSteps
         content={content}
         step1={{

@@ -12,10 +12,10 @@ const License = ({ pictogramsSelected, licenseSectionThankyouText, fileUrl }) =>
         </h1>
         <div className="grid xl:grid-cols-2 gap-20">
           <div className="flex flex-col justify-between gap-7 ">
-            <h2 className="font-bold">Selected License</h2>
+            <h3 className="font-bold">Selected License</h3>
 
             <div
-              className="flex flex-col md:grid md:grid-cols-2 lg:flex lg:flex-row items-center justify-between gap-5 border-4 border-light-violet rounded-md py-10 px-5"
+              className="flex flex-col md:grid md:grid-cols-2 lg:flex lg:flex-row items-center justify-center gap-3 border-4 border-light-violet rounded-md py-10 px-5"
               id="image-container"
             >
               {Object.values(pictogramsSelected)?.map((picto, index) => (
@@ -23,6 +23,7 @@ const License = ({ pictogramsSelected, licenseSectionThankyouText, fileUrl }) =>
                   key={index}
                   src={picto.data.attributes.url}
                   alt={picto.data.attributes.name}
+                  width={60}
                   crossOrigin="anonymous"
                 />
               ))}
@@ -36,7 +37,7 @@ const License = ({ pictogramsSelected, licenseSectionThankyouText, fileUrl }) =>
             </button>
           </div>
             <div className="flex flex-col justify-between gap-7 ">
-            <h2 className="font-bold">Your license in pdf</h2>
+            <h3 className="font-bold">Your license in pdf</h3>
             <div className=" bg-[#C5BCFF] rounded-md py-7 flex justify-center items-center">
               <img src="/pdf_icon.svg" alt="download pdf icon" />
             </div>

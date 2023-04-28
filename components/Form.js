@@ -68,7 +68,8 @@ const Form = ({ content, questions, handleImagesChange, createDocument }) => {
   // console.log('options',options);
 
   return (
-    <section className="px-5 md:px-7 lg:px-24">
+    <Element name="form-section">
+      <section className="relative bg-white px-5 md:px-7 lg:px-24 z-20">
       <div className="flex items-center justify-center gap-3 py-24">
         <img src="/API_symbol.svg" alt="" />
         <h1 className="font-bold">{content.factWizardTitle}</h1>
@@ -159,6 +160,7 @@ const Form = ({ content, questions, handleImagesChange, createDocument }) => {
         </Element>
       </form>
     </section>
+    </Element>
   );
 };
 
