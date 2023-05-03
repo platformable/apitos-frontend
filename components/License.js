@@ -15,7 +15,7 @@ const License = ({ pictogramsSelected, licenseSectionThankyouText, fileUrl }) =>
             <h3 className="font-bold">Selected License</h3>
 
             <div
-              className="flex flex-col md:grid md:grid-cols-2 lg:flex lg:flex-row items-center justify-center gap-3 border-4 border-light-violet rounded-md py-10 px-5"
+              className="flex flex-col md:grid md:grid-cols-2 lg:flex lg:flex-row items-center justify-center gap-3  border-4 border-light-violet rounded-md py-10 px-5"
               id="image-container"
             >
               {Object.values(pictogramsSelected)?.map((picto, index) => (
