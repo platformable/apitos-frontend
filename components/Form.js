@@ -70,9 +70,9 @@ const Form = ({ content, questions, handleImagesChange, createDocument }) => {
   return (
     <Element name="form-section">
       <section className="relative bg-white px-5 md:px-7 lg:px-24 z-20">
-      <div className="flex items-center justify-center gap-3 py-24">
+      <div className="flex items-center justify-start gap-3 py-14 md:py-24">
         <img src="/API_symbol.svg" alt="" />
-        <h1 className="font-bold">{content.factWizardTitle}</h1>
+        <h1 className="font-bold ">{content.factWizardTitle}</h1>
       </div>
       <form
         onSubmit={handleSubmit}
@@ -151,7 +151,7 @@ const Form = ({ content, questions, handleImagesChange, createDocument }) => {
         <Element name={`question-${questions.length + 1}`}>
           <button
             type="submit"
-            className="py-2 px-10 bg-violet text-white shadow-md font-medium rounded mt-10 mb-20"
+            className="py-2 px-20 bg-violet text-white shadow-md font-medium rounded mt-10 mb-20"
             onClick={() => createDocument(ValidateConditions)}
             // disabled={!defaultConditionsAgreed? true: false}
           >

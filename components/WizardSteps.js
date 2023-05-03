@@ -3,7 +3,7 @@ const WizardSteps = ({ content }) => {
     <section className="bg-extralight-violet py-20 px-5 md:px-7 lg:px-24 ">
       <div className="">
         <h3 className="font-bold mb-14">{content.wizardStepsTitle}</h3>
-        <article className="grid lg:grid-cols-3 gap-20">
+        <article className="grid lg:grid-cols-3 gap-10  md:gap-32">
           <div className="grid steps-rows items-start ">
             <h3 className="font-bold text-[#56B2A3]">{content.wizardSteps1Title}</h3>
             <h5 className="tracking-tight font-medium">

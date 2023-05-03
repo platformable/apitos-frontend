@@ -19,7 +19,7 @@ const Hero = ({ heroTitle, heroDescription, heroImg, heroImgText, content }) => 
 
   return (
     <div className=" flex flex-col items-start">
-      <section className=" bg-violet flex gap-10 items-center justify-center pt-20 pb-32">
+      <section className=" bg-violet flex gap-10 items-center justify-center pt-10 pb-32">
         <div className="px-5 md:px-7 lg:px-24 flex flex-col md:grid md:grid-flow-col gap-20  text-justify">
           <article className="flex flex-col items-start justify-center gap-5">
             <h3 className="text-white font-bold">{heroTitle}</h3>

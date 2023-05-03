@@ -4,7 +4,7 @@ const Footer = ({footerText}) => {
       <div className="flex gap-28  items-center">
         <div className="flex gap-3 ">
           <img src="/API_symbol-white.svg" alt="Fact icon" width={40}/>
-          <h3 className="font-bold">APIToS</h3>
+          <h3 className="font-bold ">APIToS</h3>
         </div>
 
         {/* <ul className="text-xl">
