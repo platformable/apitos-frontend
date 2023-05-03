@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Question from "./Question.js";
 import StepsCounter from "./StepsCounter";
 import useMoveToRevalidate from "@/hooks/useMoveToRevalidate.js";
@@ -7,6 +7,8 @@ import { Element, scroller } from "react-scroll";
 
 const Form = ({ content, questions, handleImagesChange, createDocument }) => {
   // console.log('data', questions)
+  const fixedRef = useRef()
+  
   const [defaultConditionsAgreed, setDefaultConditionsAgreed] = useState(false);
   const moveToInvalidatedField = useMoveToRevalidate();
 
@@ -66,7 +68,8 @@ const Form = ({ content, questions, handleImagesChange, createDocument }) => {
   // console.log('options',options);
 
   return (
-    <section className="px-5 md:px-7 lg:px-24">
+    <Element name="form-section">
+      <section className="relative bg-white px-5 md:px-7 lg:px-24 z-20">
       <div className="flex items-center justify-center gap-3 py-24">
         <img src="/API_symbol.svg" alt="" />
         <h1 className="font-bold">{content.factWizardTitle}</h1>
@@ -80,6 +83,7 @@ const Form = ({ content, questions, handleImagesChange, createDocument }) => {
             <article className="">
               <StepsCounter numberOfSteps={questions.length} currentStep={0} />
               <div
+              ref={fixedRef}
                 id="question-0"
                 className="flex flex-col lg:flex-row rounded-t gap-5 bg-light-violet p-5"
               >
@@ -156,6 +160,7 @@ const Form = ({ content, questions, handleImagesChange, createDocument }) => {
         </Element>
       </form>
     </section>
+    </Element>
   );
 };
 
