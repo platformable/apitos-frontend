@@ -8,6 +8,8 @@ import { useState } from "react";
 
 export default function Home({ content, questions }) {
   console.log(content, questions);
+
+
   const [fileUrl, setFileUrl] = useState(null);
   const [pictogramsSelected, setPictogramsSelected] = useState(
     questions?.reduce(
@@ -26,6 +28,9 @@ export default function Home({ content, questions }) {
       {}
     )
   );
+
+
+  
   // console.log("pictos", pictogramsSelected);
 
   const handleImagesChange = (image, questionName) => {
@@ -71,22 +76,9 @@ export default function Home({ content, questions }) {
         heroDescription={content.heroDescription}
         heroImg={content.heroImage}
         heroImgText={content.heroImgText}
-      />
-      <WizardSteps
         content={content}
-        step1={{
-          title: content.wizardSteps1Title,
-          description: content.wizardSteps1Description,
-        }}
-        step2={{
-          title: content.wizardSteps2Title,
-          description: content.wizardSteps2Description,
-        }}
-        step3={{
-          title: content.wizardSteps3Title,
-          description: content.wizardSteps3Description,
-        }}
       />
+        
       <Form
         content={content}
         questions={questions}
