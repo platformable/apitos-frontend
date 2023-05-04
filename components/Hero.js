@@ -21,7 +21,7 @@ const Hero = ({ heroTitle, heroDescription, heroImg, heroImgText, content }) => 
     <div className=" flex flex-col items-start">
       <section className=" bg-violet flex gap-10 items-center justify-center pt-10 pb-32">
         <div className="px-5 md:px-7 lg:px-24 flex flex-col md:grid md:grid-flow-col gap-20  text-justify">
-          <article className="flex flex-col items-start justify-center gap-5">
+          <article className="flex flex-col items-start text-left gap-5">
             <h3 className="text-white font-bold">{heroTitle}</h3>
             <p className="text-xl text-white whitespace-pre-wrap font-medium leading-snug">
               {heroDescription}
@@ -44,15 +44,15 @@ const Hero = ({ heroTitle, heroDescription, heroImg, heroImgText, content }) => 
       <button
         ref={ref}
         onClick={handleFixedWidget}
-        className="mx-5 md:mx-7 lg:mx-24 -mt-24 mb-5 border-2 rounded shadow-xl flex divide-x-2 divide-white border-white bg-black z-10 text-white  inline-block"
+        className="mx-5 md:mx-7 lg:mx-24 -mt-24 mb-5 border-2 rounded-md shadow-xl flex divide-x-2 divide-white border-white z-10 text-white  inline-block"
       >
-        <div className="bg-black flex items-center gap-2 p-2">
+        <div className="rounded-l-md bg-black flex items-center gap-2 p-2">
         <span className="text-[#C7B4FF] font-bold">Start</span>
         <img src="/API_symbol-white.svg" alt="cog icon" width={20}/>
         <span className="text-white  font-bold">FACT WIZARD</span>
 
         </div>
-        <div className="font-bold text-black bg-light-violet px-3 py-2">
+        <div className="rounded-r-md font-bold text-black bg-light-violet px-3 py-2">
             <span>NOW!</span>
         </div>
       </button>

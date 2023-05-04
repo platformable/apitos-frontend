@@ -7,7 +7,7 @@ import WizardSteps from "@/components/WizardSteps";
 import { useState } from "react";
 
 export default function Home({ content, questions }) {
-  console.log(content, questions);
+  // console.log(content, questions);
 
 
   const [fileUrl, setFileUrl] = useState(null);

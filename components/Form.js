@@ -68,7 +68,7 @@ const Form = ({ content, questions, handleImagesChange, createDocument }) => {
   // console.log('options',options);
 
   return (
-    <Element name="form-section">
+    <Element id="form-section" name="form-section">
       <section className="relative bg-white px-5 md:px-7 lg:px-24 z-20">
       <div className="flex items-center justify-start gap-3 py-14 md:py-24">
         <img src="/API_symbol.svg" alt="" />
