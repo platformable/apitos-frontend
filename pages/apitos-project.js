@@ -1,13 +1,18 @@
+import { useRef } from "react";
+import useFixedContainer from "@/hooks/useFixedContainer";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Link from "next/link";
 
-export default function Project({data}) {
+export default function Project({ data }) {
+  const ref = useRef(null);
+  const sticky = useFixedContainer(ref);
   return (
     <main>
       <Header />
-      <section className="bg-extralight-violet flex gap-10 items-center justify-center pt-10 md:pb-20 pt-32">
+      <section className="bg-extralight-violet flex gap-10 items-center justify-center pt-10 md:pb-20 md:pt-32">
         <div className="px-5 md:px-7 lg:px-24 flex flex-col md:grid md:grid-flow-col gap-20 pb-10 text-justify">
-          <article className="flex flex-col items-start justify-start gap-5">
+          <article className="flex flex-col items-start text-left justify-start gap-5">
             <h2 className="font-bold md:mb-10">APIToS</h2>
             <h4 className="font-medium ">
               The APIToS project was made possible by the Critical Digital
@@ -22,20 +27,41 @@ export default function Project({data}) {
             </h4>
           </article>
           <div className="flex flex-col justify-center items-center gap-7">
-            <img src="/cover_report.png" width={300} height={200}/>
-            <a href="#" className="font-medium underline max-lg:text-2xl">
+            <img src="/cover_report.png" width={300} height={200} />
+            <a
+              href="/downloads/API Terms of Service FACT - Digital Infrastructure Grants - 2023 report.pdf"
+              download={
+                "API Terms of Service FACT - Digital Infrastructure Grants - 2023.pdf"
+              }
+              className="font-medium underline max-lg:text-2xl"
+            >
               Download our report
             </a>
           </div>
         </div>
       </section>
+      <Link href="/#form-section">
+        <button
+          ref={ref}
+          className="mx-5 md:mx-7 lg:mx-24 max-sm:-mt-[550px] max-sm:-mb-[-500px]  -mt-48 mb-20 border-2 rounded-md shadow-xl flex divide-x-2 divide-white border-white  z-10 text-white  inline-block"
+        >
+          <div className="rounded-l-md bg-black flex items-center gap-2 p-2">
+            <span className="text-[#C7B4FF] font-bold">Start</span>
+            <img src="/API_symbol-white.svg" alt="cog icon" width={20} />
+            <span className="text-white  font-bold">FACT WIZARD</span>
+          </div>
+          <div className="rounded-r-md font-bold text-black bg-light-violet px-3 py-2">
+            <span>NOW!</span>
+          </div>
+        </button>
+      </Link>
       <section className="bg-violet px-5 md:px-7 lg:px-24 py-10">
         <h2 className="font-bold text-white mb-10">
           About the API Terms of Service (APIToS) project
         </h2>
         <article className="grid gap-5">
           <div className="flex flex-col max-sm:items-center md:flex-row gap-10 md:gap-20 rounded-xl border-white border-2 shadow py-7 px-10">
-            <img src="/icon_1_about.svg" alt="" className="w-32"/>
+            <img src="/icon_1_about.svg" alt="" className="w-32" />
             <h5 className="font-mediumt text-white ">
               We intend to build a framework making API Terms of Service easily
               understandable and shareable, for a saner and safer digital
@@ -147,7 +173,7 @@ export default function Project({data}) {
             </div>
           </div>
           <div className="flex flex-col gap-7 items-center md:items-start md:gap-0 md:flex-row border-2 border-yellow-400 rounded py-3 md:divide-x-2  md:divide-violet-500">
-            <img className="px-5 " src="/Mark_pic.png"/>
+            <img className="px-5 " src="/Mark_pic.png" />
             <div className="px-3 flex flex-col items-center h-full md:items-start justify-start gap-5 text-justify">
               <h4>Mark Boyd</h4>
               <small>
@@ -164,27 +190,25 @@ export default function Project({data}) {
           </div>
         </article>
         <h5 className="my-10 italic text-opacity-80">
-        We would like to thank all those who participated in this project
-        through our interviews, questionnaire responses, and/or participation in
-        our workshop on “New models for APITerms of Service”.
-      </h5>
+          We would like to thank all those who participated in this project
+          through our interviews, questionnaire responses, and/or participation
+          in our workshop on “New models for API Terms of Service”.
+        </h5>
       </section>
-      <Footer footerText={data.footerText}/>
+      <Footer footerText={data.footerText} />
     </main>
   );
 }
 
-
 export async function getServerSideProps(ctx) {
-  
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_SERVER_URL}/api/apito?fields[0]=footerText`
   );
   const data = await res.json();
-  console.log(data)
+  console.log(data);
   return {
     props: {
-      data: data.data.attributes
+      data: data.data.attributes,
     },
   };
 }
