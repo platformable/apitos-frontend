@@ -87,9 +87,9 @@ const Form = ({ content, questions, handleImagesChange, createDocument }) => {
                 id="question-0"
                 className="flex flex-col lg:flex-row rounded-t gap-5 bg-light-violet p-5"
               >
-                <div className="grid gap-7 bg-white rounded p-5">
-                  <div className="flex gap-5">
-                    <img src="" alt="" />
+                <div className="grid  gap-7 bg-white rounded p-5">
+                  <div className="flex items-center gap-5">
+                    <img src="/fairUser.svg" alt="" />
                     <h4 className="font-bold ">
                       {content.defaultConditionUsePolicyTitle}
                     </h4>
@@ -99,8 +99,8 @@ const Form = ({ content, questions, handleImagesChange, createDocument }) => {
                   </p>
                 </div>
                 <div className="grid gap-7 bg-white p-5 rounded">
-                  <div className="flex gap-5">
-                    <img src="" alt="" />
+                  <div className="flex items-center gap-5">
+                    <img src="/suffTime.svg" alt="" />
                     <h4 className="font-bold ">
                       {content.defaultConditionChangePolicyTitle}
                     </h4>

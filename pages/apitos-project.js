@@ -25,34 +25,37 @@ export default function Project({ data }) {
               for their support and the digital exchange all along the different
               phases of the project.
             </h4>
-            
           </article>
           <div className="flex flex-col justify-center items-center gap-7">
             <img src="/cover_report.png" width={300} height={200} />
-            <a href="#" className="font-medium underline max-lg:text-2xl">
+            <a
+              href="/downloads/API Terms of Service FACT - Digital Infrastructure Grants - 2023 report.pdf"
+              download={
+                "API Terms of Service FACT - Digital Infrastructure Grants - 2023.pdf"
+              }
+              className="font-medium underline max-lg:text-2xl"
+            >
               Download our report
             </a>
           </div>
         </div>
       </section>
       <Link href="/#form-section">
-      <button
-              ref={ref}
-              
-              className="mx-5 md:mx-7 lg:mx-24 max-sm:-mt-[550px] max-sm:-mb-[-500px]  -mt-48 mb-20 border-2 rounded-md shadow-xl flex divide-x-2 divide-white border-white  z-10 text-white  inline-block"
-            >
-              <div className="rounded-l-md bg-black flex items-center gap-2 p-2">
-                <span className="text-[#C7B4FF] font-bold">Start</span>
-                <img src="/API_symbol-white.svg" alt="cog icon" width={20} />
-                <span className="text-white  font-bold">FACT WIZARD</span>
-              </div>
-              <div className="rounded-r-md font-bold text-black bg-light-violet px-3 py-2">
-                <span>NOW!</span>
-              </div>
-            </button>
+        <button
+          ref={ref}
+          className="mx-5 md:mx-7 lg:mx-24 max-sm:-mt-[550px] max-sm:-mb-[-500px]  -mt-48 mb-20 border-2 rounded-md shadow-xl flex divide-x-2 divide-white border-white  z-10 text-white  inline-block"
+        >
+          <div className="rounded-l-md bg-black flex items-center gap-2 p-2">
+            <span className="text-[#C7B4FF] font-bold">Start</span>
+            <img src="/API_symbol-white.svg" alt="cog icon" width={20} />
+            <span className="text-white  font-bold">FACT WIZARD</span>
+          </div>
+          <div className="rounded-r-md font-bold text-black bg-light-violet px-3 py-2">
+            <span>NOW!</span>
+          </div>
+        </button>
       </Link>
       <section className="bg-violet px-5 md:px-7 lg:px-24 py-10">
-      
         <h2 className="font-bold text-white mb-10">
           About the API Terms of Service (APIToS) project
         </h2>

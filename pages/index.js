@@ -4,10 +4,11 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import License from "@/components/License";
 import WizardSteps from "@/components/WizardSteps";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Element, scroller } from "react-scroll";
 
 export default function Home({ content, questions }) {
-  // console.log(content, questions);
+  console.log(content, questions);
 
 
   const [fileUrl, setFileUrl] = useState(null);
@@ -57,6 +58,12 @@ export default function Home({ content, questions }) {
         .then((blob) => {
           const url = window.URL.createObjectURL(blob);
           setFileUrl(url);
+          scroller.scrollTo("license-section", {
+            duration: 1000,
+            // delay: 200,
+            smooth: "easeInOutQuart",
+          });
+
         })
         .catch((error) => {
           console.error(error);
@@ -99,7 +106,7 @@ export default function Home({ content, questions }) {
 export async function getServerSideProps(ctx) {
   
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_URL}/api/apito/?populate[0]=heroImage&questions[populate]=*&populate[1]=questions.Options&populate[2]=questions.Options.image`
+    `${process.env.NEXT_PUBLIC_SERVER_URL2}/api/apito/?populate[0]=heroImage&questions[populate]=*&populate[1]=questions.Options&populate[2]=questions.Options.image`
   );
   const data = await res.json();
   return {

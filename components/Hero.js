@@ -1,16 +1,21 @@
 import { useRef, useState } from "react";
 import useFixedContainer from "@/hooks/useFixedContainer";
 import WizardSteps from "./WizardSteps";
-import {  scroller } from "react-scroll";
+import { scroller } from "react-scroll";
 
-
-const Hero = ({ heroTitle, heroDescription, heroImg, heroImgText, content }) => {
+const Hero = ({
+  heroTitle,
+  heroDescription,
+  heroImg,
+  heroImgText,
+  content,
+}) => {
   const ref = useRef(null);
   const sticky = useFixedContainer(ref);
 
   const handleFixedWidget = () => {
     // hacemos scroll al form
-    
+
     scroller.scrollTo(`form-section`, {
       duration: 1000,
       smooth: "easeInOutQuart",
@@ -34,26 +39,31 @@ const Hero = ({ heroTitle, heroDescription, heroImg, heroImgText, content }) => 
               width={500}
               height={300}
             />
-            <a href="#" className="text-white underline">
+            <a
+              href="/downloads/API Terms of Service FACT - Digital Infrastructure Grants - 2023 report.pdf"
+              download={
+                "API Terms of Service FACT - Digital Infrastructure Grants - 2023.pdf"
+              }
+              className="text-white underline"
+            >
               {heroImgText}
             </a>
           </div>
         </div>
       </section>
-      
+
       <button
         ref={ref}
         onClick={handleFixedWidget}
         className="mx-5 md:mx-7 lg:mx-24 -mt-24 mb-5 border-2 rounded-md shadow-xl flex divide-x-2 divide-white border-white z-10 text-white  inline-block"
       >
         <div className="rounded-l-md bg-black flex items-center gap-2 p-2">
-        <span className="text-[#C7B4FF] font-bold">Start</span>
-        <img src="/API_symbol-white.svg" alt="cog icon" width={20}/>
-        <span className="text-white  font-bold">FACT WIZARD</span>
-
+          <span className="text-[#C7B4FF] font-bold">Start</span>
+          <img src="/API_symbol-white.svg" alt="cog icon" width={20} />
+          <span className="text-white  font-bold">FACT WIZARD</span>
         </div>
         <div className="rounded-r-md font-bold text-black bg-light-violet px-3 py-2">
-            <span>NOW!</span>
+          <span>NOW!</span>
         </div>
       </button>
       <WizardSteps
