@@ -106,7 +106,7 @@ export default function Home({ content, questions }) {
 export async function getServerSideProps(ctx) {
   
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_URL2}/api/apito/?populate[0]=heroImage&questions[populate]=*&populate[1]=questions.Options&populate[2]=questions.Options.image`
+    `${process.env.NEXT_PUBLIC_SERVER_URL}/api/apito/?populate[0]=heroImage&questions[populate]=*&populate[1]=questions.Options&populate[2]=questions.Options.image`
   );
   const data = await res.json();
   return {
