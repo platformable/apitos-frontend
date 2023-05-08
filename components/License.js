@@ -1,11 +1,13 @@
 import useDownloadCombinedImages from "@/hooks/useDownloadCombinedImages";
+import { Element } from "react-scroll";
 
 const License = ({ pictogramsSelected, licenseSectionThankyouText, fileUrl }) => {
   const downloadImages = useDownloadCombinedImages()
   return (
    <>
     {fileUrl && (
-      <section className="bg-extralight-violet pt-14 pb-28 px-5 md:px-7 lg:px-24">
+<Element name="license-section">
+  <section className="bg-extralight-violet pt-14 pb-28 px-5 md:px-7 lg:px-24">
       <div className="">
         <h1 className="text-center mb-14 font-bold">
           {licenseSectionThankyouText}
@@ -15,7 +17,7 @@ const License = ({ pictogramsSelected, licenseSectionThankyouText, fileUrl }) =>
             <h3 className="font-bold">Selected License</h3>
 
             <div
-              className="flex flex-col md:grid md:grid-cols-2 lg:flex lg:flex-row items-center justify-center gap-3  border-4 border-light-violet rounded-md py-10 px-5"
+              className="flex flex-col bg-white md:grid md:grid-cols-2 lg:flex lg:flex-row items-center justify-center gap-3  border-2 border-light-violet rounded-md py-14 px-5"
               id="image-container"
             >
               {Object.values(pictogramsSelected)?.map((picto, index) => (
@@ -53,6 +55,8 @@ const License = ({ pictogramsSelected, licenseSectionThankyouText, fileUrl }) =>
         </div>
       </div>
     </section>
+</Element>
+     
     )}
    </>
   );

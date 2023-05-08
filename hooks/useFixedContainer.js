@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 export default function useFixedContainer(ref) {
   const [chatWidth, setChatWidth] = useState(undefined);
   const [sidebarTop, setSidebarTop] = useState(undefined);
-
+console.log("ref", ref)
   useEffect(() => {
     const chatEl = ref.current.getBoundingClientRect();
     setChatWidth(chatEl.width);
@@ -22,10 +22,10 @@ export default function useFixedContainer(ref) {
   const isSticky = (e) => {
     const chatEl = ref.current;
     const scrollTop = window.scrollY;
-    if (scrollTop >= sidebarTop - 10) {
+    if (chatEl && (scrollTop >= sidebarTop - 10)) {
       chatEl.classList.add('fixed-cont');
     } else {
-      chatEl.classList.remove('fixed-cont');
+      chatEl && chatEl.classList.remove('fixed-cont');
     }
   };
 

@@ -4,7 +4,8 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import License from "@/components/License";
 import WizardSteps from "@/components/WizardSteps";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Element, scroller } from "react-scroll";
 
 export default function Home({ content, questions }) {
   console.log(content, questions);
@@ -57,6 +58,12 @@ export default function Home({ content, questions }) {
         .then((blob) => {
           const url = window.URL.createObjectURL(blob);
           setFileUrl(url);
+          scroller.scrollTo("license-section", {
+            duration: 1000,
+            // delay: 200,
+            smooth: "easeInOutQuart",
+          });
+
         })
         .catch((error) => {
           console.error(error);
