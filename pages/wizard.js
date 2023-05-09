@@ -6,6 +6,7 @@ import License from "@/components/License";
 import WizardSteps from "@/components/WizardSteps";
 import { useEffect, useState } from "react";
 import { Element, scroller } from "react-scroll";
+import Head from 'next/head';
 
 export default function Home({ content, questions }) {
   // console.log(content, questions);
@@ -44,7 +45,10 @@ export default function Home({ content, questions }) {
 
   return (
     <main className="">
-      
+       <Head>
+        <title>APIToS Wizard</title>
+      </Head>
+
       <Header />
       <Hero
         heroTitle={content.herotitle}
