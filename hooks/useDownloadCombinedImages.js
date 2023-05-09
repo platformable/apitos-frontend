@@ -1,9 +1,10 @@
 export default function useDownloadCombinedImages() {
   return (id) => {
     var canvas = document.getElementById("canvas");
+
     var ctx = canvas.getContext("2d");
     var images = document.getElementById(id).getElementsByTagName("img");
-    canvas.width = images[0].width * 5;
+    canvas.width = images[0].width * images.length;
     canvas.height = images[0].height;
     for (var i = 0; i < images.length; i++) {
       ctx.drawImage(images[i], i * images[0].width, 0);

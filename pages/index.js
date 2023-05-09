@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { Element, scroller } from "react-scroll";
 
 export default function Home({ content, questions }) {
-  console.log(content, questions);
+  // console.log(content, questions);
 
 
   const [fileUrl, setFileUrl] = useState(null);
@@ -40,39 +40,7 @@ export default function Home({ content, questions }) {
       [questionName]: image,
     }));
   };
-  const createDocument = async (runValidation) => {
-    const isDowloadable = runValidation();
-    console.log("isDowloadable", isDowloadable);
-    if (isDowloadable) {
-      fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/pdf`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-      })
-        .then((response) => {
-          console.log("response", response);
-          return response.blob();
-        })
-        .then((blob) => {
-          const url = window.URL.createObjectURL(blob);
-          setFileUrl(url);
-          scroller.scrollTo("license-section", {
-            duration: 1000,
-            // delay: 200,
-            smooth: "easeInOutQuart",
-          });
-
-        })
-        .catch((error) => {
-          console.error(error);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-  };
+  
 
   return (
     <main className="">
