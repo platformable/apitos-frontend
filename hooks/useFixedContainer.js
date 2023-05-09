@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 export default function useFixedContainer(ref) {
   const [chatWidth, setChatWidth] = useState(undefined);
   const [sidebarTop, setSidebarTop] = useState(undefined);
-console.log("ref", ref)
   useEffect(() => {
     const chatEl = ref.current.getBoundingClientRect();
     setChatWidth(chatEl.width);
