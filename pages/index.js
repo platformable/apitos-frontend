@@ -89,10 +89,11 @@ export default function Home({ content, questions }) {
       <Form
         content={content}
         questions={questions}
-        createDocument={createDocument}
+        setFileUrl={setFileUrl}
         handleImagesChange={handleImagesChange}
       />
       <License
+        content={content}
         licenseSectionThankyouText={content.licenseSectionThankyouText}
         fileUrl={fileUrl}
         pictogramsSelected={pictogramsSelected}
@@ -105,14 +106,18 @@ export default function Home({ content, questions }) {
 
 export async function getServerSideProps(ctx) {
   
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_URL}/api/apito/?populate[0]=heroImage&questions[populate]=*&populate[1]=questions.Options&populate[2]=questions.Options.image`
-  );
-  const data = await res.json();
+  const [content, questions] = await Promise.all([
+    fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/apito/?populate=*`)
+    .then(r => r.json()),
+    fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/apito/?populate[1]=questions.Options&populate[2]=questions.Options.image`)
+    .then(r => r.json())
+
+])
+  // const data = await res.json();
   return {
     props: {
-      questions: data.data.attributes.questions,
-      content: data.data.attributes,
+      questions: questions.data.attributes.questions,
+      content: content.data.attributes,
     },
   };
 }

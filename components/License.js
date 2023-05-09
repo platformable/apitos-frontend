@@ -1,7 +1,7 @@
 import useDownloadCombinedImages from "@/hooks/useDownloadCombinedImages";
 import { Element } from "react-scroll";
 
-const License = ({ pictogramsSelected, licenseSectionThankyouText, fileUrl }) => {
+const License = ({ content, pictogramsSelected, licenseSectionThankyouText, fileUrl }) => {
   const downloadImages = useDownloadCombinedImages()
   return (
    <>
@@ -20,6 +20,8 @@ const License = ({ pictogramsSelected, licenseSectionThankyouText, fileUrl }) =>
               className="flex flex-col bg-white md:grid md:grid-cols-2 lg:flex lg:flex-row items-center justify-center gap-3  border-2 border-light-violet rounded-md py-14 px-5"
               id="image-container"
             >
+              <img src={content.usePolicyImg.data.attributes.url} alt={content.usePolicyImg.data.attributes.name} width={60} crossOrigin="anonymus"/>
+              <img src={content.changePolicyImg.data.attributes.url} alt={content.changePolicyImg.data.attributes.name} width={60} crossOrigin="anonymus"/>
               {Object.values(pictogramsSelected)?.map((picto, index) => (
                 <img
                   key={index}
