@@ -45,7 +45,7 @@ const License = ({ content, pictogramsSelected, licenseSectionThankyouText, file
             <div className=" bg-[#C5BCFF] rounded-md py-7 flex justify-center items-center">
               <img src="/pdf_icon.svg" alt="download pdf icon" />
             </div>
-            <a href={fileUrl} download="test.pdf">
+            <a href={fileUrl} download="FACT-Licence.pdf">
               <button
               disabled={!fileUrl}
                 className="text-white font-medium rounded-md py-3 bg-violet w-full"
