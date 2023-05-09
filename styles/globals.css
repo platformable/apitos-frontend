@@ -108,6 +108,21 @@ input[type="radio"],input[type="checkbox"] {
     gap: 1rem;
   }
 }
+.spinner {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 3px solid;
+  border-color: white;
+  border-right-color: black;
+  animation: spinner-d3wgkg 1s infinite linear;
+}
+
+@keyframes spinner-d3wgkg {
+  to {
+    transform: rotate(1turn);
+  }
+}
 @media only screen and (max-width: 1024px) {
   h1 {
     font-size: 36px;
