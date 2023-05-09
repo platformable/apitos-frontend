@@ -73,7 +73,7 @@ const Form = ({ content, questions, handleImagesChange, setFileUrl}) => {
     if (isDowloadable) {
       setLoading(true);
 
-      fetch(`${process.env.NEXT_PUBLIC_SERVER_URL2}/api/pdf/${optionName}`)
+      fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/pdf/${optionName}`)
         .then((response) => {
           console.log("response", response);
           return response.blob();
