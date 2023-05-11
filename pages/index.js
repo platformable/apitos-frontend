@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Link from "next/link";
 import Head from 'next/head';
-
+import Script from 'next/script';
 
 export default function Project({ data }) {
   const ref = useRef(null);
@@ -14,6 +14,7 @@ export default function Project({ data }) {
        <Head>
         <title>APIToS Project</title>
       </Head>
+      <Script defer data-domain="apitos.org" src="https://plausible.io/js/script.js" />
       <Header />
       <section className="bg-extralight-violet flex gap-10 items-center justify-center pt-10 md:pb-20 md:pt-32">
         <div className="px-5 md:px-7 lg:px-24 flex flex-col md:grid md:grid-flow-col gap-20 pb-10 text-justify">
