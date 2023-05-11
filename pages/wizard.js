@@ -7,6 +7,7 @@ import WizardSteps from "@/components/WizardSteps";
 import { useEffect, useState } from "react";
 import { Element, scroller } from "react-scroll";
 import Head from 'next/head';
+import Script from 'next/script';
 
 export default function Home({ content, questions }) {
   // console.log(content, questions);
@@ -48,7 +49,7 @@ export default function Home({ content, questions }) {
        <Head>
         <title>APIToS Wizard</title>
       </Head>
-
+      <Script defer data-domain="apitos.org" src="https://plausible.io/js/script.js" />
       <Header />
       <Hero
         heroTitle={content.herotitle}
