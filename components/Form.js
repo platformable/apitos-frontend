@@ -6,10 +6,13 @@ import useMoveToRevalidate from "@/hooks/useMoveToRevalidate.js";
 import { Element, scroller } from "react-scroll";
 import Loader from "./Loader.js";
 
+import { usePlausible } from "next-plausible";
+
 const Form = ({ content, questions, handleImagesChange, setFileUrl}) => {
   // console.log('data', questions)
   const fixedRef = useRef();
   const [loading, setLoading] = useState(null);
+  const plausible = usePlausible()
   
   const [defaultConditionsAgreed, setDefaultConditionsAgreed] = useState(false);
   const moveToInvalidatedField = useMoveToRevalidate();
@@ -24,6 +27,24 @@ const Form = ({ content, questions, handleImagesChange, setFileUrl}) => {
       {}
     )
   );
+
+  const [optionsStats, setOptionsStats] = useState(Object.values(questions).reduce((acc, curr) => {
+    const key = curr.questionTitle?.split(':')[0]?.split(' ').join('_')
+    const defaultOption = curr.Options.find(option => option.isDefault)?.questionText
+    return {...acc, [key]: defaultOption}
+  }, {}))
+
+
+console.log('stats', optionsStats)
+  const handleStats = () => {
+    
+    Object.entries(optionsStats).map(([key, value]) => {
+      // console.log("key", key, 'value', value)
+      plausible(key, {
+      props: {option: value}
+    })
+    })
+  }
 
   const handleNextQuestion = (questionName) => {
     // hacemos scroll a la siguiente pregunta
@@ -61,6 +82,7 @@ const Form = ({ content, questions, handleImagesChange, setFileUrl}) => {
   };
   const createDocument = async (e) => {
     e.preventDefault()
+    // console.log("create Document", options, questions)
     const isDowloadable = ValidateConditions();
     // console.log("isDowloadable", isDowloadable);
     // event.preventDefault();
@@ -71,6 +93,8 @@ const Form = ({ content, questions, handleImagesChange, setFileUrl}) => {
       "options"
     );
     if (isDowloadable) {
+      handleStats()
+
       setLoading(true);
 
       fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/pdf/${optionName}`)
@@ -190,8 +214,8 @@ const Form = ({ content, questions, handleImagesChange, setFileUrl}) => {
             {!loading ? (
               <Element name={`question-${questions.length + 1}`}>
                 <button
-                  type="submit"
-                  className="py-2 px-20 bg-violet text-white shadow-md font-medium rounded "
+                  // type="submit"
+                  className="test_q1 py-2 px-20 bg-violet text-white shadow-md font-medium rounded "
                   onClick={createDocument}
                 >
                   Create API Terms of Services

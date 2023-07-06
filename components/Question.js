@@ -5,6 +5,7 @@ const Question = ({
   questionName,
   formState,
 }) => {
+  // console.log(questionTitle, questionName, Options)
   const rightsLevelColor = (level) => {
     const colors = {
       L1: 'green',
@@ -34,7 +35,7 @@ const Question = ({
               <li className="flex gap-1 md:gap-3 lg:gap-5 items-start" key={index}>
                 <input
                   type="radio"
-                  className="mt-3"
+                  className={`mt-3`}
                   // id="q1-option1"
                   name={questionName}
                   checked={formState[questionName] === index + 1}
