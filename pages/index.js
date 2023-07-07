@@ -14,7 +14,7 @@ export default function Project({ data }) {
        <Head>
         <title>APIToS Project</title>
       </Head>
-      <Script defer data-domain="apitos.org" src="https://plausible.io/js/script.file-downloads.js" />
+      {/* <Script defer data-domain="apitos.org" src="https://plausible.io/js/script.file-downloads.js" /> */}
       <Header />
       <section className="bg-extralight-violet flex gap-10 items-center justify-center pt-10 md:pb-20 md:pt-32">
         <div className="px-5 md:px-7 lg:px-24 flex flex-col md:grid md:grid-flow-col gap-20 pb-10 text-justify">
@@ -35,6 +35,7 @@ export default function Project({ data }) {
           <div className="flex flex-col justify-center items-center gap-7">
             <img src="/cover_report.png" width={300} height={200} />
             <a
+            target="_blank"
               href="/downloads/API Terms of Service FACT - Digital Infrastructure Grants - 2023 report.pdf"
               download={
                 "API Terms of Service FACT - Digital Infrastructure Grants - 2023.pdf"

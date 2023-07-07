@@ -1,12 +1,17 @@
 import useDownloadCombinedImages from "@/hooks/useDownloadCombinedImages";
 import { Element } from "react-scroll";
-
+import { usePlausible } from "next-plausible";
 const License = ({ content, pictogramsSelected, licenseSectionThankyouText, fileUrl }) => {
   const downloadImages = useDownloadCombinedImages()
+  const plausible = usePlausible()
+  
+  const sendPdfMetric = () => {
+    plausible('pdfDownload')
+  }
   return (
    <>
-    {fileUrl && (
-<Element name="license-section">
+    <div className={`${fileUrl ? 'block': 'hidden'}`}>
+    <Element name="license-section">
   <section className="bg-extralight-violet pt-14 pb-28 px-5 md:px-7 lg:px-24">
       <div className="">
         <h1 className="text-center mb-14 font-bold">
@@ -47,7 +52,8 @@ const License = ({ content, pictogramsSelected, licenseSectionThankyouText, file
             </div>
             <a href={fileUrl} download="FACT-Licence.pdf">
               <button
-              disabled={!fileUrl}
+                disabled={!fileUrl}
+                onClick={sendPdfMetric}
                 className="text-white font-medium rounded-md py-3 bg-violet w-full"
               >
                 Download the pdf
@@ -58,8 +64,8 @@ const License = ({ content, pictogramsSelected, licenseSectionThankyouText, file
       </div>
     </section>
 </Element>
+    </div>
      
-    )}
    </>
   );
 };
