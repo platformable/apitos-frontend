@@ -9,7 +9,6 @@ import Loader from "./Loader.js";
 import { usePlausible } from "next-plausible";
 
 const Form = ({ content, questions, handleImagesChange, setFileUrl}) => {
-  // console.log('data', questions)
   const fixedRef = useRef();
   const [loading, setLoading] = useState(null);
   const plausible = usePlausible()
@@ -35,11 +34,9 @@ const Form = ({ content, questions, handleImagesChange, setFileUrl}) => {
   }, {}))
 
 
-console.log('stats', optionsStats)
   const handleStats = () => {
     
     Object.entries(optionsStats).map(([key, value]) => {
-      // console.log("key", key, 'value', value)
       plausible(key, {
       props: {option: value}
     })

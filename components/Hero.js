@@ -44,6 +44,7 @@ const Hero = ({
               download={
                 "API Terms of Service FACT - Digital Infrastructure Grants - 2023.pdf"
               }
+              target="_blank"
               className="text-white underline"
             >
               {heroImgText}
